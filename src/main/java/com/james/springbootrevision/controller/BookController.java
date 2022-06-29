@@ -12,6 +12,7 @@ import com.james.springbootrevision.service.BookService;
 
 @RestController
 @RequestMapping(path = "api/book")
+
 public class BookController {
 	
 	private final BookService bookService;
@@ -22,7 +23,7 @@ public class BookController {
 	}
 	
 	@GetMapping
-	public List<Book> getBooks(){
-		return bookService.getBooks();
+	public List<Book> getAllBooks(){
+		return bookService.getAllBooks();
 	}
 }

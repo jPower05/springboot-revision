@@ -1,14 +1,20 @@
 package com.james.springbootrevision.model;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document
 public class Book {
-	private Long id;
+	@Id
+	private String id;
+	@Indexed(unique = true)
 	private String title;
 	private String summary;
 	private String author;
 	private String category;
 	private double rating;
 	
-	public Book(Long id, String title, String summary, String author, String category, double rating) {
+	public Book(String id, String title, String summary, String author, String category, double rating) {
 		this.id = id;
 		this.title = title;
 		this.summary = summary;
@@ -69,11 +75,11 @@ public class Book {
 		this.rating = rating;
 	}
 	
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
